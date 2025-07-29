@@ -7,7 +7,4 @@
 }
 
 
-button{
-  background-color: lightseagreen;
-  padding: 5px 10px;
-}
+/* Removed custom button styles to avoid conflict with Tailwind classes */
