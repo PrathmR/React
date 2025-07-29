@@ -39,15 +39,29 @@ const users = [
 
   ]
 const App =() => {
-    return (
-        <div>
-        <div className="p-10">
-            {users.map((user, index) => {
-             return  <Card key={index} profPic={user['profile-pic']} name={user.name} age={user.age} prof={user.profession} city={user.city} />
-            })}
+     return (
+        <div className="min-h-screen font-sans">
+            <div className="p-10 text-center">
+                <h1 className="text-4xl font-bold mb-8">User Profiles</h1>
+                <div className="flex flex-wrap justify-center">
+                    {/* Map through the users array to create a Card for each user.
+                      The key "profile-pic" contains a hyphen, so we must use bracket notation `user['profile-pic']` 
+                      instead of dot notation `user.profile-pic`.
+                    */}
+                    {users.map((user, index) => (
+                        <Card 
+                            key={index} 
+                            profPic={user['profile-pic']} 
+                            name={user.name} 
+                            age={user.age} 
+                            prof={user.profession} 
+                            city={user.city} 
+                        />
+                    ))}
+                </div>
+            </div>
         </div>
-        </div>
-    )
+    );
 }
 
 export default App;
