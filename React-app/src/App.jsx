@@ -10,6 +10,7 @@ function App() {
     <div>
       <h1>Username is {name}</h1>
       <button onClick={()=> setN('Emperor')}> Change user</button>
+      {/* <h1 className="text-3xl font-bold underline line-through">Hello world! </h1> */}
     </div>
      
     </>
