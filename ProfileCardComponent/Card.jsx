@@ -1,4 +1,4 @@
-
+import tailwindcss from '/workspaces/React/React-app/tailwind.config.js';
 
 // Card Component: Renders a single user card.
 // The image class was changed from "ml-8" to "block mx-auto" to properly center it.
