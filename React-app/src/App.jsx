@@ -1,31 +1,69 @@
-import { useState } from 'react'
-import './App.css'
+import Card from "./Card"
 
-function App() {
+    // User data array.
+    const App = () => {
+    // User data array.
+    const users = [
+      {
+        "profile-pic": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
+        "name": "Aarav Sharma",
+        "age": 28,
+        "city": "Mumbai",
+        "profession": "Software Engineer"
+      },
+      {
+        "profile-pic": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
+        "name": "Sanya Singh",
+        "age": 34,
+        "city": "Delhi",
+        "profession": "Graphic Designer"
+      },
+      {
+        "profile-pic": "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
+        "name": "Vikram Patel",
+        "age": 45,
+        "city": "Ahmedabad",
+        "profession": "Architect"
+      },
+      {
+        "profile-pic": "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
+        "name": "Priya Reddy",
+        "age": 29,
+        "city": "Hyderabad",
+        "profession": "Doctor"
+      },
+      {
+        "profile-pic": "https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
+        "name": "Rohan Gupta",
+        "age": 31,
+        "city": "Bengaluru",
+        "profession": "Marketing Manager"
+      }
+    ];
 
-  const [username, setUsername] = useState('')
-  const submitHandler = (e)=>{
-    e.preventDefault();
-    console.log(username);
-    setUsername(''); 
-  }
-
-  return (
-    <div>
-      <form onSubmit={(e)=>
-        submitHandler(e)
-      }>
-        <input value={username} 
-        onChange={(e)=>{
-          setUsername(e.target.value)
-        }}
-        className='px-4 rounded py-3 text-xl m-5 border-1 solid white font-semibold' type= 'text'
-        placeholder='Enter your name'></input>
-        <button className='bg-blue-500 text-white px-4 py-2 rounded' type='submit'>Submit</button>
-      </form>
-    </div>
-
-  )  
+    return (
+        <div className="bg-gray-100 min-h-screen font-sans">
+            <div className="p-10 text-center">
+                <h1 className="text-4xl font-bold mb-8">User Profiles</h1>
+                <div className="flex flex-wrap justify-center">
+                    {/* Map through the users array to create a Card for each user.
+                      The key "profile-pic" contains a hyphen, so we must use bracket notation `user['profile-pic']` 
+                      instead of dot notation `user.profile-pic`.
+                    */}
+                    {users.map((user, index) => (
+                        <Card 
+                            key={index} 
+                            profPic={user['profile-pic']} 
+                            name={user.name} 
+                            age={user.age} 
+                            prof={user.profession} 
+                            city={user.city} 
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
 }
 
-export default App
+export default App;
