@@ -73,20 +73,21 @@
 //App component for API calling
 import React from "react";
 import axios from "axios";
+import { useState } from "react"; 
 
 export const App = () => {
   const [data, setData] = useState([])
   const getData = async () => {
     const response = await axios.get("https://picsum.photos/v2/list?page=2&limit=10");
     setData(response.data);
-    console.log(response);
+  
   };
   return <div>
     <button onClick={getData} className="bg-teal-700 text-black font-semibold text-2xl px-6 py-4 m-7 rounded active:scale-90">Click</button>
     <div className="bg-gray-50 ">Hello</div>
     {data.map(function (elem, idx) {
       return <div key={idx} className="bg-gray items-center justify-content text-black">
-        <img src="" alt="" />
+        <img src={elem.download_url} className="h-40" />
       </div>
       
     })}
