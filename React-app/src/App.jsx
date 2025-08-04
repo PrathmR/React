@@ -97,27 +97,29 @@
 // };
 
 
+
 //App Component for Routers
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { Home } from './RoutersComp/Home'
-import { Contact } from './RoutersComp/Contact'
-import { About } from './RoutersComp/About'
-import { Profile } from './RoutersComp/Profile'
-import { Header } from './RoutersComp/Header'
-import { Header } from './RoutersComp/Header'
-export const App = () => {
-    return (
-      <div>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
-    );
-}
+
+
+// import React from 'react'
+// import { Routes, Route } from 'react-router-dom'
+// import { Home } from './RoutersComp/Home'
+// import { Contact } from './RoutersComp/Contact'
+// import { About } from './RoutersComp/About'
+// import { Profile } from './RoutersComp/Profile'
+// import { Header } from './RoutersComp/Header'
+// export const App = () => {
+//     return (
+//       <div>
+//         <Header />
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/profile" element={<Profile />} />
+//           <Route path="/contact" element={<Contact />} />
+//           <Route path="/about" element={<About />} />
+//         </Routes>
+//       </div>
+//     );
+// }
 
 export default App;
