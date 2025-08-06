@@ -138,8 +138,8 @@ const App = () => {
       setQuote(randomquote);
   }
   return (
-    <div className='text-white bg-gray-800 h-screen flex flex-col items-center justify-center'>
-      <div>{quote}</div>
+    <div className='text-white bg-gray-900 h-screen flex flex-col items-center justify-center px-50 py-40'>
+      <div className='bg-gray-600 px-15 py-5 font-semibold'>{quote}</div>
        <button onClick={randomize} className='bg-green-600 px-6 py-3 mt-2 rounded active:scale-90'>Click</button>
     </div>
    
