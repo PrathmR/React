@@ -74,8 +74,6 @@
 
 
 //App component for API calling
-
-
 // import React from "react";
 // import axios from "axios";
 // import { useState } from "react";
@@ -121,5 +119,32 @@
 // }
 
 
+//Random quote generator
+import React from 'react'
+import { useState } from 'react';
 
-export default App;
+let quotes = [
+  "The only limit to our realization of tomorrow is our doubts of today.",
+  "The future belongs to those who believe in the beauty of their dreams.",
+  "In the end, we will remember not the words of our enemies, but the silence of our friends.",
+  "Life is what happens when you're busy making other plans.",
+  "Get busy living or get busy dying."
+];
+
+const App = () => {
+  const [quote, setQuote] = useState(quotes[0])
+  let randomize = () => {
+     const randomquote = quotes[Math.floor((Math.random()* quotes.length))]
+      setQuote(randomquote);
+  }
+  return (
+    <div className='text-white'>
+      <div>{quote}</div>
+       <button onClick={randomize}>Click</button>
+    </div>
+   
+  )
+}
+
+export default App
+
