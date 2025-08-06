@@ -120,31 +120,29 @@
 
 
 //Random quote generator
-import React from 'react'
-import { useState } from 'react';
-
-let quotes = [
-  "The only limit to our realization of tomorrow is our doubts of today.",
-  "The future belongs to those who believe in the beauty of their dreams.",
-  "In the end, we will remember not the words of our enemies, but the silence of our friends.",
-  "Life is what happens when you're busy making other plans.",
-  "Get busy living or get busy dying."
-];
-
-const App = () => {
-  const [quote, setQuote] = useState(quotes[0])
-  let randomize = () => {
-     const randomquote = quotes[Math.floor((Math.random()* quotes.length))]
-      setQuote(randomquote);
-  }
-  return (
-    <div className='text-white bg-gray-900 h-screen flex flex-col items-center justify-center px-50 py-40'>
-      <div className='bg-gray-600 px-15 py-5 font-semibold rounded'>{quote}</div>
-       <button onClick={randomize} className='bg-green-600 px-6 py-3 mt-2 rounded active:scale-90'>Click</button>
-    </div>
+// import React from 'react'
+// import { useState } from 'react';
+// let quotes = [
+//   "The only limit to our realization of tomorrow is our doubts of today.",
+//   "The future belongs to those who believe in the beauty of their dreams.",
+//   "In the end, we will remember not the words of our enemies, but the silence of our friends.",
+//   "Life is what happens when you're busy making other plans.",
+//   "Get busy living or get busy dying."
+// ];
+// const App = () => {
+//   const [quote, setQuote] = useState(quotes[0])
+//   let randomize = () => {
+//      const randomquote = quotes[Math.floor((Math.random()* quotes.length))]
+//       setQuote(randomquote);
+//   }
+//   return (
+//     <div className='text-white bg-gray-900 h-screen flex flex-col items-center justify-center px-50 py-40'>
+//       <div className='bg-gray-600 px-15 py-5 font-semibold rounded'>{quote}</div>
+//        <button onClick={randomize} className='bg-green-600 px-6 py-3 mt-2 rounded active:scale-90'>Click</button>
+//     </div>
    
-  )
-}
+//   )
+// }
 
 export default App
 
