@@ -169,12 +169,13 @@ function App() {
 
   return (
     <div className="App">
+      
       <form
         onSubmit={addItem}
         className="text-white bg-gray-900 h-screen flex flex-col items-center justify-center px-50 py-40"
       >
         <input
-          className="bg-gray-600 px-15 py-5 font-semibold rounded border-1"
+          className="bg-gray-600 px-15 py-5 font-semibold rounded border-1 capitalize"
           type="text"
           placeholder="Write a todo..."
           value={task}
@@ -186,11 +187,11 @@ function App() {
         >
           Add Item
         </button>
-        <ul className="mt-5 list-disc">
+        <ul className="mt-5 list-disc capitalize">
           {todos.map((todo, index) => (
             <li key={index}>
               {todo}
-              <button className= 'ml-2 px-4 py-3 bg-red-600 rounded active:scale-90' onClick={() => deleteItem(index)}>Delete</button>
+              <button className= 'ml-2 mt-2 px-4 py-3 bg-red-600 relative rounded active:scale-90' onClick={() => deleteItem(index)}>Delete</button>
             </li>
           ))}
         </ul>
