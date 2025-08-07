@@ -169,7 +169,8 @@ function App() {
 
   return (
     <div className="bg-gray-800 min-h-screen  ">
-      <div className="bg-gray-800 min-h-screen flex items-center justify-center ">
+      
+      <div className="bg-gray-800 min-h-screen flex items-center justify-center rounded ">
         <form
           onSubmit={addItem}
           className="text-white bg-gray-900 flex flex-col items-center justify-center px-50 py-40"
