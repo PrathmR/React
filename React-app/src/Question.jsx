@@ -19,7 +19,7 @@
 //    return <div>{arr.map(stringValue => {
 //        return <h1>{stringValue}</h1>
 //    })}</div>
-// 
+//
 
 // CHALLENGE(ii) : Adding answers to questions
 // In this lab, let us add answers to the SingleQuestion component. Edit the file Question.jsx and make sure of the following things:
@@ -35,22 +35,38 @@
 // 	</header>
 // 	<p>{info}</p>
 // </article>
-// //}
+//
+//CHALLENGE(iii) : Expanding and collapsing answers
+// In this lab, make the application as follows:
+
+// By default, no info of questions should be visible.
+// If I click on the + button of a question, info for that question should be visible.
+// On clicking + button, it should change into - and vice versa.
+// On clicking - button, the info should become invisible.
+// Hints:
+// Have a useState variable as a boolean value (say, visible) inside your every SingleQuestion component.
+// Conditionally show and hide the <p>{info}</p> with JSX.
+// Do the same with symbol
+// }
 
 import React, { useState } from "react";
 
-const Question = (props) => {
-  const { title, info } = props;
+const Question = ({ title, info }) => {
+  const [isVisible, setIsVisible] = useState(false);
 
-  // update the UI here
+  const toggleVisibility = () => {
+    setIsVisible((prev) => !prev);
+  };
 
   return (
     <article className="question">
       <header>
         <h4>{title}</h4>
-        <button className="btn">+</button>
+        <button className="btn" onClick={toggleVisibility}>
+          {isVisible ? "-" : "+"}
+        </button>
       </header>
-      <p>{info}</p>
+      {isVisible && <p>{info}</p>}
     </article>
   );
 };
