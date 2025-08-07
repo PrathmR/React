@@ -147,67 +147,66 @@
 
 //Todo App
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
+// function App() {
+//   const [task, setTask] = useState("");
+//   const [todos, setTodos] = useState([]);
+//   function addItem(e) {
+//     e.preventDefault();
+//     if (task.trim() === "") {
+//       alert("Enter a task first");
+//       return;
+//     }
+//     setTodos([...todos, task]);
+//     setTask("");
+//   }
 
-function App() {
-  const [task, setTask] = useState("");
-  const [todos, setTodos] = useState([]);
-  function addItem(e) {
-    e.preventDefault();
-    if (task.trim() === "") {
-      alert("Enter a task first");
-      return;
-    }
-    setTodos([...todos, task]);
-    setTask("");
-  }
+//   function deleteItem(index) {
+//     const newTodos = todos.filter((_, i) => i !== index);
+//     setTodos(newTodos);
+//   }
 
-  function deleteItem(index) {
-    const newTodos = todos.filter((_, i) => i !== index);
-    setTodos(newTodos);
-  }
-
-  return (
-    <div className="bg-gray-800 min-h-screen text-white font-sans">
-      <h2>To-do App</h2>
-      <div className="bg-gray-800 min-h-screen flex items-center justify-center rounded ">
-        <form
-          onSubmit={addItem}
-          className="text-white bg-gray-900 flex flex-col items-center justify-center px-50 py-40 "
-        >
-          <input
-            className="bg-gray-600 px-15 py-5 font-semibold rounded border-1 capitalize "
-            type="text"
-            placeholder="Write a todo..."
-            value={task}
-            onChange={(e) => setTask(e.target.value)}
-          />
-          <button
-            className="bg-green-700 px-4 py-3 mt-3 rounded font-semibold active:scale-90"
-            type="submit"
-          >
-            Add To-do
-          </button>
-          <ul className="mt-5 capitalize w-full space-y-2 list-decimal list-inside overflow-y-auto max-h-80">
-            {todos.map((todo, index) => (
-              <li
-                key={index}
-                className="mr-4 flex justify-between list-decimal items-center bg-gray-700 px-4 py-2 rounded"
-              >
-                {index + 1}.{" " + todo}
-                <button
-                  className="ml-2 px-2 py-2 bg-red-600 rounded active:scale-90"
-                  onClick={() => deleteItem(index)}
-                >
-                  Delete
-                </button>
-              </li>
-            ))}
-          </ul>
-        </form>
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div className="bg-gray-800 min-h-screen text-white font-sans">
+//       <h2>To-do App</h2>
+//       <div className="bg-gray-800 min-h-screen flex items-center justify-center rounded ">
+//         <form
+//           onSubmit={addItem}
+//           className="text-white bg-gray-900 flex flex-col items-center justify-center px-50 py-40 "
+//         >
+//           <input
+//             className="bg-gray-600 px-15 py-5 font-semibold rounded border-1 capitalize "
+//             type="text"
+//             placeholder="Write a todo..."
+//             value={task}
+//             onChange={(e) => setTask(e.target.value)}
+//           />
+//           <button
+//             className="bg-green-700 px-4 py-3 mt-3 rounded font-semibold active:scale-90"
+//             type="submit"
+//           >
+//             Add To-do
+//           </button>
+//           <ul className="mt-5 capitalize w-full space-y-2 list-decimal list-inside overflow-y-auto max-h-80">
+//             {todos.map((todo, index) => (
+//               <li
+//                 key={index}
+//                 className="mr-4 flex justify-between list-decimal items-center bg-gray-700 px-4 py-2 rounded"
+//               >
+//                 {index + 1}.{" " + todo}
+//                 <button
+//                   className="ml-2 px-2 py-2 bg-red-600 rounded active:scale-90"
+//                   onClick={() => deleteItem(index)}
+//                 >
+//                   Delete
+//                 </button>
+//               </li>
+//             ))}
+//           </ul>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// }
 
 export default App;
