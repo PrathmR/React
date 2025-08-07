@@ -169,8 +169,11 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={addItem}>
-        <input
+      <form
+        onSubmit={addItem}
+        className="text-white bg-gray h-screen flex flex-col items-center justify-center px-50 py-40"
+      >
+        <input className="bg-gray-600 px-15 py-5 font-semibold rounded border-1"
           type="text"
           placeholder="Write a todo..."
           value={task}
