@@ -19,16 +19,40 @@
 //    return <div>{arr.map(stringValue => {
 //        return <h1>{stringValue}</h1>
 //    })}</div>
-// }
+// 
+
+// CHALLENGE(ii) : Adding answers to questions
+// In this lab, let us add answers to the SingleQuestion component. Edit the file Question.jsx and make sure of the following things:
+
+// The component should now receive props called title and info
+// The UI for the SingleQuestion should look like:
+// <article className='question'>
+// 	<header>
+// 	<h4>{title}</h4>
+// 	<button className='btn'>
+// 		+
+// 	</button>
+// 	</header>
+// 	<p>{info}</p>
+// </article>
+// //}
+
 import React, { useState } from "react";
-const SingleQuestion = ({ title }) => {
+
+const Question = (props) => {
+  const { title, info } = props;
+
+  // update the UI here
+
   return (
-    <div className="question">
-      <h2>{title}</h2>;
-    </div>
+    <article className="question">
+      <header>
+        <h4>{title}</h4>
+        <button className="btn">+</button>
+      </header>
+      <p>{info}</p>
+    </article>
   );
 };
 
-export default SingleQuestion;
-
-
+export default Question;
