@@ -147,55 +147,47 @@
 //Todo App
 
 import React, { useState } from "react";
-const [task, setTask] = useState("");
 
-const [todos, setTodos] = useState([]);
+function App() {
+  const [task, setTask] = useState("");
+  const [todos, setTodos] = useState([]);
 
-function addItem(e) {
-  if (e) {
+  function addItem(e) {
     e.preventDefault();
-    if (task === "") {
+    if (task.trim() === "") {
       alert("Enter a task first");
-    } else {
-      setTodos([...todos, task]);
-      setTask("");
+      return;
     }
-  } else {
-    setTodos([...todos]);
+    setTodos([...todos, task]);
+    setTask("");
   }
-}
 
-function deleteItem(index) {
-  todos.splice(index, 1);
-  addItem();
-}
+  function deleteItem(index) {
+    const newTodos = todos.filter((_, i) => i !== index);
+    setTodos(newTodos);
+  }
 
-return (
-  <div className="App">
-    <form onSubmit={addItem}>
-      <input
-        type="text"
-        placeholder="write a todo..."
-        value={task}
-        onChange={(e) => {
-          setTask(e.target.value);
-        }}
-      />
-
-      <button type="submit"> Add Item </button>
-    </form>
-    <ul>
-      {todos.map((todo, index) => {
-        return (
-          <div>
-            <li>{todo}</li>
+  return (
+    <div className="App">
+      <form onSubmit={addItem}>
+        <input
+          type="text"
+          placeholder="Write a todo..."
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+        />
+        <button type="submit">Add Item</button>
+      </form>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
             <button onClick={() => deleteItem(index)}>Delete</button>
-          </div>
-        );
-      })}
-    </ul>
-  </div>
-);
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
-export default App
-
+export default App;
