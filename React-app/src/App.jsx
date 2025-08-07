@@ -71,8 +71,6 @@
 //   );
 // };
 
-
-
 //App component for API calling
 // import React from "react";
 // import axios from "axios";
@@ -93,8 +91,6 @@
 //     })}
 //   </div>;
 // };
-
-
 
 //App Component for Routers
 // import React from 'react'
@@ -118,7 +114,6 @@
 //     );
 // }
 
-
 //Random quote generator
 // import React from 'react'
 // import { useState } from 'react';
@@ -140,10 +135,9 @@
 //       <div className='bg-gray-600 px-15 py-5 font-semibold rounded'>{quote}</div>
 //        <button onClick={randomize} className='bg-green-600 px-6 py-3 mt-2 rounded active:scale-90'>Click</button>
 //     </div>
-   
+
 //   )
 // }
-
 
 //Todo App
 
