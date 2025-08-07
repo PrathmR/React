@@ -203,4 +203,26 @@
 //   );
 // }
 
+//Single Question Component
+//Note : This component accepts css from AppSingleQ.css file and from index.css where it may be commented out. 
+// Uncomment it if you want to use the css from index.css file.
+import React, { useState } from "react";
+import data from "./data";
+import SingleQuestion from "./Question";
+import "./AppSingleQ.css";
+function App() {
+  return (
+    <main>
+      <div className="container">
+        <h3>FAQ</h3>
+        <section className="info">
+          {data.map((item) => (
+            <SingleQuestion key={item.id} title={item.title} />
+          ))}
+          {/* map over data imported at the top and use SingleQuestion component */}
+        </section>
+      </div>
+    </main>
+  );
+}
 export default App;
