@@ -171,24 +171,30 @@ function App() {
     <div className="App">
       <form
         onSubmit={addItem}
-        className="text-white bg-gray h-screen flex flex-col items-center justify-center px-50 py-40"
+        className="text-white bg-gray-900 h-screen flex flex-col items-center justify-center px-50 py-40"
       >
-        <input className="bg-gray-600 px-15 py-5 font-semibold rounded border-1"
+        <input
+          className="bg-gray-600 px-15 py-5 font-semibold rounded border-1"
           type="text"
           placeholder="Write a todo..."
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
-        <button type="submit">Add Item</button>
+        <button
+          className="bg-green-700 px-4 py-3 mt-3 rounded font-semibold active:scale-90"
+          type="submit"
+        >
+          Add Item
+        </button>
+        <ul className="mt-5 list-disc">
+          {todos.map((todo, index) => (
+            <li key={index}>
+              {todo}
+              <button className= 'ml-2 px-4 py-3 bg-red-600 rounded active:scale-90' onClick={() => deleteItem(index)}>Delete</button>
+            </li>
+          ))}
+        </ul>
       </form>
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>
-            {todo}
-            <button onClick={() => deleteItem(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
