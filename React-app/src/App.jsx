@@ -140,7 +140,6 @@
 // }
 
 //Todo App
-
 // import React, { useState } from "react";
 // function App() {
 //   const [task, setTask] = useState("");
@@ -203,6 +202,7 @@
 //   );
 // }
 
+
 //Single Question Component
 //Note : This component accepts css from AppSingleQ.css file and from index.css where it may be commented out.
 // Uncomment it if you want to use the css from index.css file.
@@ -235,7 +235,9 @@
 //See QuizComp folder for more details
 import React, { useState } from "react";
 
- function App() {
+function App() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    
   const questions = [
     {
       questionText: "What is the capital of France?",
@@ -273,7 +275,11 @@ import React, { useState } from "react";
         { answerText: "7", isCorrect: true },
       ],
     },
-  ];
+    ];
+    
+    const handleAnswerClick = () => {
+        setCurrentIndex(currentIndex+1)
+    }
 
   return (
     <div className="app">
@@ -285,16 +291,16 @@ import React, { useState } from "react";
         <>
           <div className="question-section">
             <div className="question-count">
-              <span>Question 1</span>/{questions.length}
+                 <span>Question {currentIndex + 1}</span>/{questions.length}
             </div>
             {/* HINT: You can access first question using questions[0] */}
-            <div className="question-text">{questions[0].questionText}</div>
+            <div className="question-text">{questions[currentIndex].questionText}</div>
           </div>
           <div className="answer-section">
-            {questions[0].answerOptions.map((answer) => {
+            {questions[currentIndex].answerOptions.map((answer) => {
               // Add onClick listener to this button
               return (
-                <button key={answer.answerText}>{answer.answerText}</button>
+                <button key={answer.answerText} onClick={handleAnswerClick}>{answer.answerText}</button>
               );
             })}
           </div>
