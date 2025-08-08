@@ -1,4 +1,5 @@
-**Setting the first question dynamically**
+**Challenge1 : Setting the first question dynamically**
+
 Welcome to a new React project. In this project we will create a quiz app completely in React.
 
 Let us go through the project boilerplate in this lab. You can see we start with a raw structure, take your time and browse the App.jsx file to understand how it works currently.
@@ -10,4 +11,20 @@ To pass this lab, you will need to change the text “This is where the question
 HINT: You can access the first question using questions[0]
 
 
+**Challenge2: Setting the first question answers dynamically**
+
+Alright. Now that we have setup our question dynamically using questions[0], let us add the correct options for this question too.
+
+You should now replace the Answer 1 and so on with correct options for the first question only. Your final output should have the first question, and the correct options with it. That is:
+
+Q: What is the capital of France
+
+New York
+London
+Paris
+Dublin
+Challenge Instructions
+To pass this lab, you will need to change the text “This is where the question text should go” to the text of the first question using questions[0].questionText (already done)
+You should map on questions[0].answerOptions and display the text (using .answerText in separate buttons)
+HINT: You can access the first question using questions[0]
 
