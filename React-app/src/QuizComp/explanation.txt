@@ -83,7 +83,32 @@ You have to do it inside the handleAnswerClick method on the right.
 Challenge Instructions
 To pass this lab, add a new state variable quizFinished as mentioned above.
 Set this variable to true once the quiz is over. 
-HINT: You can check if quiz is over by checking currentIndex state value and comparing it with questions.length
+HINT: You can check if quiz is over by checking currentIndex state value and comparing it with 
+questions.length
 This should make your application change the rendered text to 
 You scored 1 out of {questions.length} once your quiz is over. 
 You can verify it by playing it on the right, before running tests.
+
+
+**Challenge5: Calculating quiz score**
+We have not calculated the score of the user yet. 
+If you see, the questions array contains information about the correct answer too. 
+If the user selects the correct option, we want to increment the score somehow, 
+if not, we keep the score the same.
+
+Go ahead and create a new state variable:
+
+const [score, setScore] = useState(0)
+Now, we need to verify if the user clicked on the correct option or not. 
+For this, you can use your own implementation, but here’s a hint:
+
+The function handleAnswerClick could accept an argument: isCorrect. 
+If isCorrect is true, you increment the score, just like you incremented setCurrentIndex in the past.
+If not, you don’t increment the score variable.
+You can pass isCorrect while calling handleAnswerClick like this:
+<button onClick={() => handleAnswerClick(answer.isCorrect)}>...</button>
+Challenge Instructions
+To pass this lab, add a new state variable score as mentioned above.
+Increment this score every time a correct option is selected.
+Do nothing to this variable if an incorrect answer is selected.
+The final page should display the final score instead of “1” hardcoded value.
