@@ -1,0 +1,10 @@
+**Setting the first question dynamically**
+Welcome to a new React project. In this project we will create a quiz app completely in React.
+
+Let us go through the project boilerplate in this lab. You can see we start with a raw structure, take your time and browse the App.jsx file to understand how it works currently.
+
+It is mostly static data with a few questions, so let us start adding dynamic functionality to it.
+
+Challenge Instructions
+To pass this lab, you will need to change the text “This is where the question text should go” to the text of the first question.
+HINT: You can access the first question using questions[0]
