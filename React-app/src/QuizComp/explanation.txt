@@ -1,22 +1,26 @@
 **Challenge1 : Setting the first question dynamically**
 
 Welcome to a new React project. In this project we will create a quiz app completely in React.
-
-Let us go through the project boilerplate in this lab. You can see we start with a raw structure, take your time and browse the App.jsx file to understand how it works currently.
+Let us go through the project boilerplate in this lab. 
+You can see we start with a raw structure, 
+take your time and browse the App.jsx file to understand how it works currently.
 
 It is mostly static data with a few questions, so let us start adding dynamic functionality to it.
 
 Challenge Instructions
-To pass this lab, you will need to change the text “This is where the question text should go” to the text of the first question.
+To pass this lab, you will need to change the text 
+“This is where the question text should go” to the text of the first question.
 HINT: You can access the first question using questions[0]
 
 
 
 **Challenge2: Setting the first question answers dynamically**
 
-Alright. Now that we have setup our question dynamically using questions[0], let us add the correct options for this question too.
-
-You should now replace the Answer 1 and so on with correct options for the first question only. Your final output should have the first question, and the correct options with it. That is:
+Alright. Now that we have setup our question dynamically using questions[0], 
+let us add the correct options for this question too.
+You should now replace the Answer 1 and so on with correct options 
+for the first question only. Your final output should have the first question, 
+and the correct options with it. That is:
 
 Q: What is the capital of France
 
@@ -25,23 +29,61 @@ London
 Paris
 Dublin
 Challenge Instructions
-To pass this lab, you will need to change the text “This is where the question text should go” to the text of the first question using questions[0].questionText (already done)
-You should map on questions[0].answerOptions and display the text (using .answerText in separate buttons)
+To pass this lab, you will need to change the text 
+“This is where the question text should go” to the text of 
+the first question using questions[0].questionText (already done)
+You should map on questions[0].answerOptions and 
+display the text (using .answerText in separate buttons)
 HINT: You can access the first question using questions[0]
 
 
 
 **Challenge3: Adding question index state variable***
-Okay. We have already set our first question correctly, but we want to cycle through all the questions when we click on the answers. For this, the question should be changed. One way we can do it is to have an index variable (a state variable) assigned to questions instead of just a 0 as the index for questions variable.
+Okay. We have already set our first question correctly, 
+but we want to cycle through all the questions when we click on the answers. 
+For this, the question should be changed. 
+One way we can do it is to have an index variable (a state variable) 
+assigned to questions instead of just a 0 as the index for questions variable.
 
-This means we have to change our code from questions[0] to questions[currentIndex] everywhere. You will also need to create this currentIndex as the state variable:
+This means we have to change our code from questions[0] 
+to questions[currentIndex] everywhere. 
+You will also need to create this currentIndex as the state variable:
 
 const [currentIndex, setCurrentIndex] = useState(0)
-Note that we set the default value as 0 which means we will see the first question by default (this is because the value you pass inside useState is used as the initial value when the component renders for the first time)
+Note that we set the default value as 0 
+which means we will see the first question by default 
+(this is because the value you pass inside useState is used as the initial value 
+when the component renders for the first time)
 
-Finally, we also need to create a function which we assign to <button onClick={<here>}>Answer</button>, so that, when you click on any answer, the question index increments.
+Finally, we also need to create a function which we assign 
+to <button onClick={<here>}>Answer</button>, so that, when you click on any answer,
+ the question index increments.
 
 Challenge Instructions
-To pass this lab, you will need to add a new state variable to monitor the current question. You can name this variable as currentIndex
-You should attach a function to onClick of your button (answer), which when clicked, should increment the currentIndex variable above.
-This should make your application change the question and its answers whenever someone clicks on any answer button.
+To pass this lab, you will need to add a new state variable to monitor the current question. 
+You can name this variable as currentIndex
+You should attach a function to onClick of your button (answer), which when clicked,
+ should increment the currentIndex variable above.
+This should make your application change the question 
+and its answers whenever someone clicks on any answer button.
+
+
+**Challenge4: Handling quiz end**
+So far, we can proceed to the next questions, which is awesome. 
+But you’ll see that your app crashes once you try to keep playing when your questions end. 
+We need to fix this and add a check to show the score if we have completed the quiz. 
+Let’s do that in this lab.
+
+Go ahead and create a new state variable:
+
+const [quizFinished, setQuizFinished] = useState(false)
+We will set this variable to true once the quiz finishes. 
+You have to do it inside the handleAnswerClick method on the right.
+
+Challenge Instructions
+To pass this lab, add a new state variable quizFinished as mentioned above.
+Set this variable to true once the quiz is over. 
+HINT: You can check if quiz is over by checking currentIndex state value and comparing it with questions.length
+This should make your application change the rendered text to 
+You scored 1 out of {questions.length} once your quiz is over. 
+You can verify it by playing it on the right, before running tests.
