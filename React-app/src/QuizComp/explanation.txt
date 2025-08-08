@@ -11,6 +11,7 @@ To pass this lab, you will need to change the text “This is where the question
 HINT: You can access the first question using questions[0]
 
 
+
 **Challenge2: Setting the first question answers dynamically**
 
 Alright. Now that we have setup our question dynamically using questions[0], let us add the correct options for this question too.
@@ -28,3 +29,19 @@ To pass this lab, you will need to change the text “This is where the question
 You should map on questions[0].answerOptions and display the text (using .answerText in separate buttons)
 HINT: You can access the first question using questions[0]
 
+
+
+**Challenge3: Adding question index state variable***
+Okay. We have already set our first question correctly, but we want to cycle through all the questions when we click on the answers. For this, the question should be changed. One way we can do it is to have an index variable (a state variable) assigned to questions instead of just a 0 as the index for questions variable.
+
+This means we have to change our code from questions[0] to questions[currentIndex] everywhere. You will also need to create this currentIndex as the state variable:
+
+const [currentIndex, setCurrentIndex] = useState(0)
+Note that we set the default value as 0 which means we will see the first question by default (this is because the value you pass inside useState is used as the initial value when the component renders for the first time)
+
+Finally, we also need to create a function which we assign to <button onClick={<here>}>Answer</button>, so that, when you click on any answer, the question index increments.
+
+Challenge Instructions
+To pass this lab, you will need to add a new state variable to monitor the current question. You can name this variable as currentIndex
+You should attach a function to onClick of your button (answer), which when clicked, should increment the currentIndex variable above.
+This should make your application change the question and its answers whenever someone clicks on any answer button.
