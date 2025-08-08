@@ -229,4 +229,7 @@
 //     </main>
 //   );
 // }
+
+
+//App component for Quiz
 export default App;
