@@ -239,6 +239,7 @@ export default function App() {
   // Define a state variable here to track question status
   const [currentIndex, setCurrentIndex] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
+  const [score, setScore]=useState(0);
   const questions = [
     {
       questionText: "What is the capital of France?",
@@ -278,7 +279,10 @@ export default function App() {
     },
   ];
 
-  function handleAnswerClick() {
+  function handleAnswerClick(isCorrect) {
+    if (isCorrect=== true) {
+      setScore(score + 1);
+    }
     setCurrentIndex(currentIndex);
     // Check if the quiz is over here
     if (currentIndex === questions.length - 1) {
@@ -292,13 +296,13 @@ export default function App() {
     <div className="app">
       {quizFinished ? (
         <div className="score-section">
-          You scored 1 out of {questions.length}
+          You scored {score} out of {questions.length}
         </div>
       ) : (
         <>
           <div className="question-section">
             <div className="question-count">
-                <span>Question {currentIndex}</span>/{questions.length}
+                <span>Question {currentIndex+1}</span>/{questions.length}
             </div>
             {/* You should change the "0" here to a state variable */}
             <div className="question-text">
@@ -310,7 +314,7 @@ export default function App() {
             {questions[currentIndex].answerOptions.map((answer) => {
               // Add onClick listener to this button
               return (
-                <button onClick={handleAnswerClick} key={answer.answerText}>
+                <button onClick={()=>handleAnswerClick(answer.isCorrect)} key={answer.answerText}>
                   {answer.answerText}
                 </button>
               );
