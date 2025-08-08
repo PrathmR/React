@@ -298,7 +298,7 @@ export default function App() {
         <>
           <div className="question-section">
             <div className="question-count">
-              <span>Question 1</span>/{questions.length}
+                <span>Question {currentIndex}</span>/{questions.length}
             </div>
             {/* You should change the "0" here to a state variable */}
             <div className="question-text">
