@@ -235,7 +235,7 @@
 //See QuizComp folder for more details
 import React, { useState } from "react";
 
-export default function App() {
+ function App() {
   const questions = [
     {
       questionText: "What is the capital of France?",
@@ -301,4 +301,4 @@ export default function App() {
     </div>
   );
 }
-c
+export default App;
