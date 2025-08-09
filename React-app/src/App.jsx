@@ -330,7 +330,7 @@
 //uncomment it if you want to use the css from index.css file.
 import React, { useState } from "react";
 import data from "./data";
-import List from "./List";
+import List from "./BirthdayReminder/List";
 
 function App() {
   return (
