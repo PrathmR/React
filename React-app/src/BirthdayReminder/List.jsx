@@ -4,8 +4,13 @@ const List = ({people}) => {
   return (
       <>
           {people.map((person) => {
-            return  <h4 key={person.id}>{person.name}</h4>;
-              
+              const { id, name, age, image } = person;
+              return <article className='person'>
+                  <img src={image} alt={name} />
+                  <h4>{name}</h4>
+                  <p>{age}</p>
+                  
+              </article>
           })}
       
     </>
