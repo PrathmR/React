@@ -324,7 +324,10 @@
 //   );
 // }
 
+
 //App component for birthday remainder
+//Css is commented in index.css file
+//uncomment it if you want to use the css from index.css file.
 import React, { useState } from "react";
 import data from "./data";
 import List from "./List";
