@@ -1,0 +1,27 @@
+**Challenge1: Creating birthday view container**
+
+Welcome to a new React project! In this project, 
+we will use React to simply render a list of data items which will be birthdays of a few people.. 
+This will be rendered from a static data source, 
+and should help you understand how to import and use/clear data inside a state.
+
+Let's start by creating some static views. 
+One thing you can remember as a tip, you can always create static data holders first, 
+and then populate them with dynamic data later on.
+
+This is a very clean approach to build dynamic components as it allows 
+you to make the component ready before you fill it dynamically with data.
+
+Challenge Instructions
+Inside your App.jsx file, create the following HTML hierarchy:
+main > section.container > h3 + List
+Hint: The above abbreviation means that your structure should look like the following:
+<main>
+	<section className="container">
+    	<h3></h3>
+        <List />
+    </section>
+</main>
+Your h3 should contain the text:
+0 birthdays today
+Your <List /> component should be the List.jsx component which is imported at the top.
