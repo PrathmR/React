@@ -79,7 +79,7 @@ clear the records and would reset it to 0 Birthdays.
 The button is already available for you, you just have to make sure of its functionality.
 
 Challenge Instructions
-Create a new state variable called people
+Create a new state variable called people,
 The initial value of this state variable should be the imported data from top.
 Pass this state variable now in the List component.
 When the Clear button is pressed, empty the state variable 
