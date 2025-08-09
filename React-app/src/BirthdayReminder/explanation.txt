@@ -25,3 +25,22 @@ Hint: The above abbreviation means that your structure should look like the foll
 Your h3 should contain the text:
 0 birthdays today
 Your <List /> component should be the List.jsx component which is imported at the top.
+
+
+
+**Challenge2:Populating static list data
+We have the basic UI available with us. 
+Let us now populate the static data from the data.js file available. 
+This file has been already opened for you on the right. 
+Investigate this file and see how the JSON data is looking.
+
+Challenge Instructions
+Inside your App.jsx file, you should now replace 0 Birthdays 
+Today with <item count> Birthdays Today. 
+Therefore, initially, it should show 5 Birthdays Today Remember, 
+the <item count> comes from the number of elements inside your data variable imported at top.
+Hint: data.length
+Pass the imported data variable as a prop to List component. This prop should be called people
+Hint: <List people={data} />
+In the List component, use this passed data to render 
+just the names of the people for now. You can map over these people and display their names.
