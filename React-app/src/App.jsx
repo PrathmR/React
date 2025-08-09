@@ -343,7 +343,7 @@ function App() {
       <section className="container" >
       
         <h3>{people.length} birthdays today</h3>
-        <List people={data} />
+        <List people={people} />
         <button onClick={clearAllRecords} className="active:scale-90">Clear All</button>
       </section>
     </main>
