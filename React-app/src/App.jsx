@@ -331,15 +331,20 @@
 import React, { useState } from "react";
 import data from "./BirthdayReminder/data";
 import List from "./BirthdayReminder/List";
-
 function App() {
+ 
+  const [people, setPeople] = useState(data);
+
+  function clearAllRecords() {
+    setPeople([]);
+  }
   return (
     <main>
-      <section className="container">
-        {/* Create a h3 element below*/}
-        <h3>{data.length} birthdays today</h3>
-        {/* import and add list component here from list.jsx*/}
-              <List people={data} />
+      <section className="container" >
+      
+        <h3>{people.length} birthdays today</h3>
+        <List people={data} />
+        <button onClick={clearAllRecords} className="active:scale-90">Clear All</button>
       </section>
     </main>
   );

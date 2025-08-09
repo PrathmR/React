@@ -69,3 +69,18 @@ and display the following HTML structure:
 </article>
 Make sure you replace the placeholders appropriately. 
 Also, CSS classes in React JSX are named as className, just a reminder!
+
+
+
+**Challenge4 Adding a Clear button**
+
+In this final lab, let us now add a “Clear” button which will 
+clear the records and would reset it to 0 Birthdays. 
+The button is already available for you, you just have to make sure of its functionality.
+
+Challenge Instructions
+Create a new state variable called people
+The initial value of this state variable should be the imported data from top.
+Pass this state variable now in the List component.
+When the Clear button is pressed, empty the state variable 
+so that no record is displayed (Hint: set it to an empty array)
