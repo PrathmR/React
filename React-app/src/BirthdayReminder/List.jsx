@@ -1,9 +1,13 @@
 import React from "react";
-
-const List = () => {
+import data from "./data";
+const List = ({people}) => {
   return (
-    <>
-      <h2>list component</h2>
+      <>
+          {people.map((person) => {
+              <h4 key={person.id}>{person.name}</h4>;
+              
+          })}
+      
     </>
   );
 };

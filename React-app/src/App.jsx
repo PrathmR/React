@@ -329,7 +329,7 @@
 //Css is commented in index.css file
 //uncomment it if you want to use the css from index.css file.
 import React, { useState } from "react";
-import data from "./data";
+import data from "./BirthdayReminder/data";
 import List from "./BirthdayReminder/List";
 
 function App() {
@@ -337,7 +337,7 @@ function App() {
     <main>
       <section className="container">
         {/* Create a h3 element below*/}
-        <h3>0 birthdays today</h3>
+        <h3>{data.length} birthdays today</h3>
         {/* import and add list component here from list.jsx*/}
               <List people={data} />
       </section>
