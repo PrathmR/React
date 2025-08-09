@@ -44,3 +44,28 @@ Pass the imported data variable as a prop to List component. This prop should be
 Hint: <List people={data} />
 In the List component, use this passed data to render 
 just the names of the people for now. You can map over these people and display their names.
+
+
+
+**Challenge3: Displaying the UI**
+
+Now that we have the names of people from the static data, 
+let us make the UI a little bit better. 
+You can investigate all the CSS in the css files already, 
+therefore, we will simply start using the CSS classes directly.
+
+In this challenge, you only have to build up from the 
+last challenge and create a UI inside List component.
+
+Challenge Instructions
+Inside your List.jsx file, iterate over the people prop 
+and display the following HTML structure:
+<article class="person">
+	<img src="<image of user>" alt="<name of user>" />
+	<div>
+		<h4>NAME_OF_USER</h4>
+		<p>AGE_OF_USER years</p>
+	</div>
+</article>
+Make sure you replace the placeholders appropriately. 
+Also, CSS classes in React JSX are named as className, just a reminder!
