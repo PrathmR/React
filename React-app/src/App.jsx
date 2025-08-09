@@ -324,3 +324,22 @@
 //   );
 // }
 
+//App component for birthday remainder
+import React, { useState } from "react";
+import data from "./data";
+import List from "./List";
+
+function App() {
+  return (
+    <main>
+      <section className="container">
+        {/* Create a h3 element below*/}
+        <h3>0 birthdays today</h3>
+        {/* import and add list component here from list.jsx*/}
+        <List />
+      </section>
+    </main>
+  );
+}
+
+export default App;
