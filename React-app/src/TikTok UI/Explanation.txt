@@ -1,0 +1,13 @@
+Introduction
+Welcome to a new project! In this project, we will attempt to build the video
+ interface of tiktok and clone it with React. Our objective in this lab is:
+
+Create same video interface as tiktok
+Use real videos
+The videos should scroll and snap properly
+Fetch video information from an API URL.
+The UI should be built with React
+In this classroom, we will build the whole interface for tiktok making 
+sure of all the things listed above. On the right, you can see how the final app 
+would look and feel like. 
+From the next lab onwards, we will start building this from scratch. Let’s go!
