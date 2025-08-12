@@ -30,3 +30,45 @@ You should create a new file called Video.jsx (already created for you)
 Inside this file, make sure you have a div with class video as the root element.
 Inside div.video, make sure you have a video element with class player and loop attribute set as well.
 Your video element should have the src of props.url where url is passed as the component prop.
+
+
+**Challenge2: Adding player styles
+By now, you should be able to see a simple video poster preview in your browser. 
+This doesn’t do much for us though. 
+Let us style the player first, so it is in the center of the screen and has the correct dimensions.
+
+We will use some interesting CSS properties along the way and will discuss them 
+briefly here for the context
+
+scroll-snap-type CSS property
+The scroll-snap-type CSS property sets how strictly snap points are enforced on 
+the scroll container in case there is one. Check out the demo and read more about it on MDN.
+
+Challenge Requirements
+In this challenge, you’ll be working with App.css file in your structure. 
+Make sure of the following points to pass this lab:
+
+On your html selector, set the scroll-snap-type property value to y mandatory
+The .app CSS selector should have a background of black
+The .app CSS selector should be a grid (Hint: display property)
+The .app CSS selector should have place-items: center
+The .container element should have the height as 90vh and width as 50.625vh
+tip
+The reason we selected the height and width as 90vh and 50.625 vh is 
+because they are in the ratio 9:16 which is the ratio of the tiktok (vertical) videos.
+
+The .container element should have relative position.
+The .container element should have overflow set to scroll
+The .container element should have border-radius set to 20px
+Bonus tip: Also hide the scrollbars with the following CSS:
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.container::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
