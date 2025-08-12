@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Video from "./Video";
 import "./App.css";
 
- function App() {
+const API_URL =
+  "https://raw.githubusercontent.com/codedamn-classrooms/tiktok-react-material/main/data.json";
+
+export default function App() {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => res.json()) // convert response to JSON
+      .then((data) => {
+        setVideos(data); // store JSON array in state
+      });
+  }, []);
+
   return (
     <div className="app">
       <div className="container">
-        <Video url="https://github.com/codedamn-classrooms/tiktok-react-material/raw/main/v1.mp4" />
+        {/* Loop over the videos array and render a Video component for each */}
+        {videos.map((video, index) => (
+          <Video key={index} url={video.url} />
+        ))}
       </div>
     </div>
   );
 }
-export default App;
