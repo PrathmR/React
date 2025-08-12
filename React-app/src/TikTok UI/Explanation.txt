@@ -86,3 +86,37 @@ fetch the data of the API and set the data inside the videos state variable
 Inside div.container, do a Array.map over the videos state variable 
 inside App.jsx file and render a <Video /> component for every video.
 Make sure to pass the src appropriately in the Video component as well.
+
+
+**Challenge4 : Snapping videos to top
+Alright. Now that you can see the videos on the right, 
+you should be able to scroll inside that div to see different videos. 
+However, one thing you will quickly notice is that videos are not getting “snapped” at the top, 
+like it will happen in the app.
+
+Remember we added scroll-snap-type earlier? Let us add another similar property 
+called scroll-snap-align
+
+scroll-snap-align
+scroll-snap-align is part of the CSS Scroll Snap Module. 
+Scroll snapping refers to “locking” the position of the viewport to specific 
+elements on the page as the window (or a scrollable container) is scrolled. 
+Think of a scroll-snapping container like putting a magnet on top of an element that 
+sticks to the top of the viewport and forces the page to stop scrolling right there.
+
+scroll-snap-align is a required property for a scroll-snapping element within a 
+scroll-snapping container. For more information on scroll-snapping containers see 
+the scroll-snap-type in the last few labs on html element. 
+
+scroll-snap-align tells the browser which part of an element should be aligned 
+when a snap point is encountered: Should the element snap to the start, center , 
+or end of the parent container that contains the scroll-snap-type property?
+
+If you want an element to snap into place at the start of that element, give it 
+a scroll-snap-align value like so:
+
+/* Assuming this element is a child of a container with `scroll-snap-type` set */
+.element {
+  scroll-snap-align: start;
+}
+In this lab, you’re required to set scroll-snap-align to start on the .video element
