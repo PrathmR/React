@@ -2,7 +2,7 @@ import React from "react";
 import Video from "./Video";
 import "./App.css";
 
-export default function App() {
+ function App() {
   return (
     <div className="app">
       <div className="container">
@@ -11,3 +11,4 @@ export default function App() {
     </div>
   );
 }
+export default App;
