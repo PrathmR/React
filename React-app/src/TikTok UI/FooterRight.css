@@ -2,13 +2,13 @@
 .footer-right{
 	position: relative;
 	z-index:100;
-	color:white;
+	color:rgb(255, 255, 255);
 	margin-right:15px;
 }
 .sidebar-icon{
 	width:50px;
 	display :flex;
-	margin-bottom:20px;
+	margin-bottom:30px;
 	flex-direction:column;
 	justify-content:center;
 	align-items:center;
