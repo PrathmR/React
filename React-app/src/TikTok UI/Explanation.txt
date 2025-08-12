@@ -120,3 +120,106 @@ a scroll-snap-align value like so:
   scroll-snap-align: start;
 }
 In this lab, you’re required to set scroll-snap-align to start on the .video element
+
+
+**Challenge5:Creating video metadata panel**
+
+So far so good! We now have a decent video preview 
+(video still doesn’t play, we will fix it later). 
+Let us add the metadata preview (the video description, creator name, song name, etc.) 
+in this lab and style them all. This is going to be a long lab, so buckle up!
+
+Challenge Requirements
+Important note: Make sure you use exact CSS selectors as mentioned below, 
+otherwise your tests might fail. (i.e. if both h3 > p and h3 p are valid, 
+but the doc below says to use h3 p, then h3 > p although would work fine, might fail the test)
+
+To pass this lab, make sure of the following things:
+
+In your FooterLeft.jsx component, create the following JSX hierarchy:
+<div className="footer-left">
+	<div className="text">
+		<h3>@{channel}</h3>
+		<p>{description}</p>
+		<div className="ticker">
+			<MusicNoteIcon style={{ width: '30px' }} />
+			<marquee direction="left" scrollamount="2">
+				{song}
+			</marquee>
+		</div>
+	</div>
+</div>
+The channel, description and song are coming from the prop of the component. 
+You will be able to see how the props are passed in the Video.jsx file.
+Inside App.jsx file, all the props are passed for you for this lab, therefore, 
+you can access them directly in Video.jsx file and pass them down to your FooterLeft.jsx component.
+Note that marquee tag in HTML will create that scrolling like effect, no need of any custom CSS or JS!
+Also note that MusicNoteIcon is already present for you as SVG component 
+inside icons folder, therefore you need to import it from there.
+Now, let us discuss styling the components. These are tested and are important to implement:
+
+Inside Video.css file in the .video selector, make sure the following styles are applied:
+Property	Value
+background-color	white
+width and height	100%
+text-shadow	0 0 4px rgba(0, 0, 0, 0.5)
+scroll-snap-align	start
+position	relative
+Your video element has the className of player. Inside the Video.css file,
+ add the following styles to .player selector:
+Property	Value
+position	absolute
+object-fit	fill
+top and left values	0
+width and height values	100%
+Finally, for the .bottom-controls selector inside Video.css file, do the following:
+Property	Value
+display	flex
+align-items	flex-end
+height	100%
+Let us now come to FooterLeft.css file.
+
+This file should be imported inside your FooterLeft.jsx file. 
+Make sure of the following pointers inside the CSS file FooterLeft.css:
+
+The selector .footer-left should be styled as follows:
+Property	Value
+position	relative
+flex element should grow	yes
+color	white
+pointer-events	none
+display	flex
+margin-left	15px
+margin-bottom	30px
+There’s more! The .ticker selector should be:
+Property	Value
+height	fit-content
+width	60%
+display	flex
+align-items	center
+Keep going. The .ticker marquee selector should be:
+Property	Value
+display	flex
+align-items	center
+We’re almost done. Now style the .text selector. The width of .text should be 100%
+Finally, for .text h3 and .text p containing the handle and 
+description respectively, give a padding-bottom of 20px
+You’re done :)
+Bonus styles:
+
+To give an inner box-shadow effect, add the following to your CSS. 
+Make sure you understand what every property does here!
+
+.video::before {
+	content: '';
+	display: block;
+	box-shadow: 0 -33px 48px rgba(0, 0, 0, 0.5) inset;
+	width: 100%;
+	pointer-events: none;
+	z-index: 99;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background: transparent;
+}
