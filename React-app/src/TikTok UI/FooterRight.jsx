@@ -5,7 +5,7 @@ import MessageIcon from "./icons/Message";
 import ShareIcon from "./icons/Share";
 import "./FooterRight.css";
 
-function VideoSidebar({ likes, shares, messages }) {
+function FooterRight({ likes, shares, messages }) {
   const [liked, setLiked] = useState(false);
 
   return (
@@ -43,4 +43,4 @@ function VideoSidebar({ likes, shares, messages }) {
   );
 }
 
-export default VideoSidebar;
+export default FooterRight;
