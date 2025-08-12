@@ -5,27 +5,42 @@ import MessageIcon from "./icons/Message";
 import ShareIcon from "./icons/Share";
 import "./FooterRight.css";
 
-function FooterRight({ likes, shares, messages }) {
-  // TODO: Add code here
+function VideoSidebar({ likes, shares, messages }) {
+  const [liked, setLiked] = useState(false);
+
   return (
     <div className="footer-right">
-      <div className="sidebar-icon">
-        <FavoriteBorderIcon style={{ width: "40px", height: "40px" }} />
-        <p>{likes}</p>
+      <div
+        className="sidebar-icon"
+        onClick={() => setLiked(!liked)}
+        style={{ cursor: "pointer" }}
+      >
+        {liked ? (
+          <FavoriteIcon style={{ width: "40px", height: "40px" }} />
+        ) : (
+          <FavoriteBorderIcon style={{ width: "40px", height: "40px" }} />
+        )}
+        <p>{liked ? likes + 1 : likes}</p>
       </div>
+
       <div className="sidebar-icon">
         <MessageIcon style={{ width: "40px", height: "40px" }} />
         <p>{messages}</p>
       </div>
+
       <div className="sidebar-icon record-below">
         <ShareIcon style={{ width: "40px", height: "40px" }} />
         <p>{shares}</p>
       </div>
+
       <div className="sidebar-icon record">
-        <img src="https://static.thenounproject.com/png/934821-200.png" />
+        <img
+          src="https://static.thenounproject.com/png/934821-200.png"
+          alt="record"
+        />
       </div>
     </div>
   );
 }
 
-export default FooterRight;
+export default VideoSidebar;
