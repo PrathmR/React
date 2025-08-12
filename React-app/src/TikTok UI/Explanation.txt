@@ -72,3 +72,17 @@ Bonus tip: Also hide the scrollbars with the following CSS:
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
+
+
+
+**Challenge3 :Loading multiple videos through API
+We are making progress! Let us now load multiple videos through an API. 
+You can already see the endpoint for JSON URL set in the App.jsx file.
+
+To pass this lab, take care of the following things:
+
+fetch the data of the API and set the data inside the videos state variable 
+(Hint: You can use fetch inside useEffect for now)
+Inside div.container, do a Array.map over the videos state variable 
+inside App.jsx file and render a <Video /> component for every video.
+Make sure to pass the src appropriately in the Video component as well.
