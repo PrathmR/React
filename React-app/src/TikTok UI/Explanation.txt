@@ -223,3 +223,54 @@ Make sure you understand what every property does here!
 	position: absolute;
 	background: transparent;
 }
+
+
+**Challenge6: Creating like, share, comment and music disc buttons**
+So far we have created the video snapping effect on scroll, 
+and the little footer for controls. However, we are still missing 
+the buttons we’re supposed to see on the bottom right side. Let us add those in this lab.
+
+Buttons to add
+Like - the icon file for this is present in icons/FavoriteIconBordered.jsx
+Share - the icon file for this is present in icons/Share.jsx
+Message - the icon file for this is present in icons/Message.jsx
+Disc - this is an image - https://static.thenounproject.com/png/934821-200.png
+Challenge Requirements
+To pass this lab, make sure of the following things:
+
+Your FooterRight.jsx component should look like the following:
+<div className="footer-right">
+	<div className="sidebar-icon">
+		<FavoriteBorderIcon
+			style={{ width: '40px', height: '40px' }}
+		/>
+		<p>{likes}</p>
+	</div>
+	<div className="sidebar-icon">
+		<MessageIcon style={{ width: '40px', height: '40px' }} />
+		<p>{messages}</p>
+	</div>
+	<div className="sidebar-icon record-below">
+		<ShareIcon style={{ width: '40px', height: '40px' }} />
+		<p>{shares}</p>
+	</div>
+	<div className="sidebar-icon record">
+		<img src="https://static.thenounproject.com/png/934821-200.png" />
+	</div>
+</div>
+Make sure the hierarchy above is correct
+The FooterRight.jsx component is already included and used with 
+correct props passed to it in the Video.jsx component.
+However, in your FooterRight.jsx component, make sure you are correctly 
+destructing the props and using them appropriately - likes, messages, shares are passed as props.
+Let us now come to CSS coding. Inside your FooterRight.css file, make 
+sure of the following points below
+.footer-right selector should have z-index of 100, color as white and 15px of margin-right
+.sidebar-icon selector should have 50px width, flex as the display, 30px 
+as margin-bottom, the flex-direction should be column, justify-content 
+and align-items both should have center value and text-align should also be center
+The .record selector should have 5 second linear infinite animation of 
+name spinTheRecord (the @keyframes declaration is already present for you in the file itself). 
+It should also have filter property of invert(1) to turn the black image into white.
+Finally, your .record-below selector should have a bottom margin of 70px
+Good luck!
