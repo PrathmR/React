@@ -274,3 +274,21 @@ name spinTheRecord (the @keyframes declaration is already present for you in the
 It should also have filter property of invert(1) to turn the black image into white.
 Finally, your .record-below selector should have a bottom margin of 70px
 Good luck!
+
+
+**Challenge7: Making like button work**
+We’re close to completion. Two more things left: like button and video play. 
+In this lab, let us add functionality to make sure when the like button 
+is clicked, it gets filled and count increases, and it reverts back to normal when clicked again.
+
+Some points to consider:
+
+There are two icon files: icons/FavoriteIcon.jsx and icons/FavoriteIconBordered.jsx.
+By default, FavoriteIconBordered.jsx is imported.
+Inside FooterRight.jsx, create a new boolean state variable called liked with a default value of false.
+On the like button div.sidebar-icon, add a onClick on the tag such that on clicking it, 
+the value of the state variable liked is toggled.
+If the liked value is true, you should show FavoriteIcon.jsx component, and if it 
+is false, you should show FavoriteIconBordered.jsx
+You should also increase the like counter by 1 if the item is liked, otherwise 
+you should show the original count.
