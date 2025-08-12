@@ -1,8 +1,9 @@
 import React from "react";
+import MusicNote from "./icons/MusicNote";
 import "./FooterLeft.css";
-import MusicNoteIcon from "./icons/MusicNote.jsx";
 
-export default function VideoFooter({ channel, description, song }) {
+export default function VideoFooter(props) {
+  const { channel, description, song } = props;
   // write code here
   return (
     <div className="footer-left">
@@ -10,7 +11,7 @@ export default function VideoFooter({ channel, description, song }) {
         <h3>@{channel}</h3>
         <p>{description}</p>
         <div className="ticker">
-          <MusicNoteIcon style={{ width: "30px" }} />
+          <MusicNote style={{ width: "30px" }} />
           <marquee direction="left" scrollamount="2">
             {song}
           </marquee>
