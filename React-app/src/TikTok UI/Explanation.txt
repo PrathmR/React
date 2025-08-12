@@ -292,3 +292,29 @@ If the liked value is true, you should show FavoriteIcon.jsx component, and if i
 is false, you should show FavoriteIconBordered.jsx
 You should also increase the like counter by 1 if the item is liked, otherwise 
 you should show the original count.
+
+
+**Challenge8: INSTRUCTIONS
+CHALLENGES
+DISCUSSIONS
+Making videos play/pause correctly
+So close! Our UI is completely ready, the only thing left is the videos 
+do not play right now. Let us fix that.
+
+Challenge Requirements
+In the Video.jsx file, create a ref using useRef hook. Hint:
+const videoRef = useRef(null)
+Assign this videoRef to the <video className=”player” /> element
+Also attach onClick listener to this video element above. Call a function onVideoPress
+Inside the onVideoPress function, toggle the state of video playing. Hint:
+const onVideoPress = () => {
+	if (videoRef.current.paused) {
+		videoRef.current.play()
+	} else {
+		videoRef.current.pause()
+	}
+}
+Bonus task (not evaluated):
+Can you implement a way such that when the user scrolls 
+over an already playing video, the video gets paused automatically? 
+(This is present in the solution link shown below)
