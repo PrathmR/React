@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import Tours from "./Tours";
-import "./App.css"; // Assuming you have some styles in App.css
+
 const url = "https://www.course-api.com/react-tours-project";
 
 function App() {
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // ✅ Remove a tour by filtering it out
+  function removeTour(tourID) {
+    const newTours = tours.filter((tour) => tour.id !== tourID);
+    setTours(newTours);
+  }
+
   async function fetchTours() {
     setLoading(true);
-    try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error("Network response was not ok");
-      const data = await res.json();
-      console.log("Fetched tours:", data);
-      setTours(data);
-    } catch (error) {
-      console.error("Error fetching tours:", error);
-    }
+
+    const data = await fetch(url);
+    const jsonData = await data.json();
+    setTours(jsonData);
+
     setLoading(false);
   }
 
@@ -36,7 +38,7 @@ function App() {
 
   return (
     <main>
-      <Tours tours={tours} />
+      <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
 }
