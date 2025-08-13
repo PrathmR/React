@@ -108,3 +108,26 @@ Add a new button inside your <p> tag (done for you), which when clicked should
 toggle the value of readMore state variable.
 This button should conditionally show the following texts: If readMore is true, 
 then show show less otherwise show read more as the text.
+
+
+**Challeng5:Removing Tours
+The final piece of our project is to remove individual tours. Let’s see how you can do this.
+
+You already can see a button ‘Not Interested’. You have to add functionality 
+such that when you click on the button, that tour is removed. That’s it. 
+The instructions below can be used as a help.
+
+Challenge Instructions
+To pass this lab, take care of the following things:
+
+Inside your Tour.jsx you can already see that we have button and a 
+click handler coming as a prop. This click handler is coming all the way from 
+App.jsx to Tours.jsx and then finally Tour.jsx.
+This practice of passing a prop transparently to components down the hierarchy is called 
+prop-drilling and is considered usually fine with a few numbers of props a few levels of 
+the hierarchy down.
+In the Tour.jsx component, add a click handler to that ‘Not Interested’ button, such that,
+ when it is called, the id of the tour which you get from the props is passed as the argument.
+You have to write main logic inside App.jsx file in the removeTour function which 
+accepts the id passed in above point.
+Filter the existing tours list and update the state variable. React will do the rest.
