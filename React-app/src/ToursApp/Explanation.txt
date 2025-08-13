@@ -88,3 +88,23 @@ In the Tour component, use the props passed above to render the following markup
 </footer>
 </article>
 Make sure you replace the placeholders correctly.
+
+
+**Challeng4:Adding "Read More" button
+The UI looks great! However, you can see that the description is too long. 
+Let us add a “Read More” button allowing a person to read the full description if they want.
+ Otherwise, we will keep a short excerpt of the description.
+
+Challenge Instructions
+To pass this lab, take care of the following things:
+
+Inside your Tour.jsx file, create a state variable called readMore
+Write logic to show the first 200 characters of props.info in your <p>
+ tag inside this file if readMore state variable is true. If it is false, show the full props.info
+Hint:
+const str = "My awesome string"
+const smallStr = str.substring(0, 5) // stores first 5 characters: "My aw"
+Add a new button inside your <p> tag (done for you), which when clicked should 
+toggle the value of readMore state variable.
+This button should conditionally show the following texts: If readMore is true, 
+then show show less otherwise show read more as the text.
