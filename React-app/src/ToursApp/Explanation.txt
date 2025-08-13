@@ -1,0 +1,4 @@
+Introduction to Project
+Welcome to another React practice project. In this project you have to create 
+a Tours app in React, which is a simple UI app fetching data 
+over network and then displaying it on the screen.
