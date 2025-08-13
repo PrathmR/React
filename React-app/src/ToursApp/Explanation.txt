@@ -3,7 +3,7 @@ Welcome to another React practice project. In this project you have to create
 a Tours app in React, which is a simple UI app fetching data 
 over network and then displaying it on the screen.
 
-**Challeng1: Fetching Tours Data
+**Challeng1: Fetching Tours Data**
 This project relies on data from a remote API, 
 so let us fetch that JSON data before doing anything else. 
 In React, there are much better ways of handling data fetching 
@@ -38,3 +38,19 @@ Use useEffect hook and call the fetchTours() function.
 Inside fetchTours , fetch the contents of the API URL: https://course-api.com/react-tours-project
 Once fetched, set the data to tours state variable.
 This should now automatically display some data in UI which should pass your tests.
+
+
+**Challeng2:Setting Loader
+Sometimes, network calls might take a few seconds to complete. 
+In that case, you almost always want to convey the message to user that you are 
+loading something, especially if you have no upfront data to show to the user. 
+In this lab, we will implement a “loading” screen while our data is loading.
+
+Challenge Instructions
+To pass this lab, take care of the following things:
+
+Create a state variable loading and initialize this variable to true. (done for you)
+Before you call your network request, set the loading variable to true.
+Once network request completes, set the loading variable back to false.
+Your render screen should show the Loading component for some time, 
+and once data is loaded it should automatically show it again.
