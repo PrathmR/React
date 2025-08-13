@@ -54,3 +54,37 @@ Before you call your network request, set the loading variable to true.
 Once network request completes, set the loading variable back to false.
 Your render screen should show the Loading component for some time, 
 and once data is loaded it should automatically show it again.
+
+
+**Challeng3: Creating Tours UI
+Now that we have data and loader, let us quickly create 
+the UI for tours. For this, you have to pass your fetched data as a prop,
+ and then use the template provided to render UI. We will be working with 3 files in this lab.
+
+Challenge Instructions
+To pass this lab, take care of the following things:
+
+Pass down your tours into the <Tours /> component in the App.jsx file.
+Inside the Tours.jsx file, you have to map on 
+the passed tour data in the prop, and render <Tour /> component for every item.
+This <Tour /> component should receive all the properties 
+of the object as props, i.e., an example could be:
+<Tour 
+id={2} 
+image={"something"} 
+info={"something"} 
+price={3} 
+name={"something"} />
+In the Tour component, use the props passed above to render the following markup:
+<article className="single-tour">
+<img src="<IMAGE>" alt="<NAME>" />
+<footer>
+<div className="tour-info">
+<h4>NAME</h4>
+<h4 className="tour-price">PRICE</h4>
+</div>
+<p>INFO</p>
+<button className="delete-btn">Not Interested</button>
+</footer>
+</article>
+Make sure you replace the placeholders correctly.
