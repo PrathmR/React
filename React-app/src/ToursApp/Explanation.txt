@@ -2,3 +2,39 @@ Introduction to Project
 Welcome to another React practice project. In this project you have to create 
 a Tours app in React, which is a simple UI app fetching data 
 over network and then displaying it on the screen.
+
+**Challeng1: Fetching Tours Data
+This project relies on data from a remote API, 
+so let us fetch that JSON data before doing anything else. 
+In React, there are much better ways of handling data fetching 
+which comes baked in with caching and revalidation of data, 
+but because this is a beginner level classroom project, we want to learn how to do it using 
+just fetch API provided by the browser.
+
+This is how a basic fetch request can be performed in a React component:
+
+const MyComponent = () => {
+   useEffect(() => {
+      fetch('<YOUR URL>').then(data => {
+         // work with your data
+      })
+   }, [])
+}
+Let us break this down:
+
+We use a useEffect hook, because we want to run this query only once.
+How do we make sure we run this query only once? We make sure by passing an 
+empty array [] as the second argument in the useEffect hook. Remember that useEffect hook
+ will be called every time any dependency within that dependency array gets changed 
+ (this is a simplified statement, but would work for now). Therefore, by passing an 
+ empty array, we want useEffect to never be called again.
+Because all useEffects are automatically called once the component is mounted, this 
+will run exactly one time per component mount.
+Challenge Instructions
+To pass this lab, take care of the following things:
+
+Create a state variable tours (done for you)
+Use useEffect hook and call the fetchTours() function.
+Inside fetchTours , fetch the contents of the API URL: https://course-api.com/react-tours-project
+Once fetched, set the data to tours state variable.
+This should now automatically display some data in UI which should pass your tests.
