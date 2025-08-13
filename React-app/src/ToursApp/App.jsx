@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import Tours from "./Tours";
-
-const url = "https://course-api.com/react-tours-project";
+import "./App.css"; // Assuming you have some styles in App.css
+const url = "https://www.course-api.com/react-tours-project";
 
 function App() {
   const [tours, setTours] = useState([]);
@@ -10,9 +10,15 @@ function App() {
 
   async function fetchTours() {
     setLoading(true);
-    const res = await fetch(url);
-    const data = await res.json();
-    setTours(data);
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("Network response was not ok");
+      const data = await res.json();
+      console.log("Fetched tours:", data);
+      setTours(data);
+    } catch (error) {
+      console.error("Error fetching tours:", error);
+    }
     setLoading(false);
   }
 
@@ -30,7 +36,6 @@ function App() {
 
   return (
     <main>
-      {/* ✅ pass fetched tours */}
       <Tours tours={tours} />
     </main>
   );
