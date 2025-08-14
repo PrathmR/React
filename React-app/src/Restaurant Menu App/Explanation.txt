@@ -78,3 +78,21 @@ You should finally set it using setMenuItems and the UI would update automatical
 thanks to React.
 Note: You have to handle the case of clicking All button in a special way, 
 and make sure all items are displayed.
+
+
+**Challenge5: Making categories dynamic
+You can see that right now we manually create the category buttons by hardcoding 
+the values to be called while calling filterItems function. This is error-prone 
+and cumbersome to maintain, say when you want to add more items to your data,
+ or in cases where you don’t even know what the data will look like (from an HTTP request, for example)
+
+To pass this lab, make sure of the following things:
+
+You can see Categories component now receives another prop called categories from App.jsx file.
+This prop should be a unique set of values of all category fields inside your data.js file.
+Therefore, you have to compute all the unique values from data.js file 
+(as multiple items might have same category) and then pass it in the 
+<Categories component call in App.jsx
+Your task is to modify the categories array at the top in App.jsx file
+ to include only unique categories, and then render them in the Categories component.
+Note: Do it dynamically, not by manually writing your categories
