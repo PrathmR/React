@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
-import "./index.css";
+
 function App() {
   const [menuItems, setMenuItems] = useState(items);
 
-  // don't worry about it yet
-  const filterItems = () => {};
+  // Filter based on category
+  const filterItems = (category) => {
+    if (category === "all") {
+      setMenuItems(items); // show all items
+      return;
+    }
+    const newItems = items.filter((item) => item.category === category);
+    setMenuItems(newItems);
+  };
 
   return (
     <main>
