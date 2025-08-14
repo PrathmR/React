@@ -1,12 +1,16 @@
 import React from "react";
 
-const Menu = ({ items }) => {
+// accept props here
+const Menu = (props) => {
+  const items = props.items;
+
+  // create the UI according to instructions
   return (
     <div className="section-center">
-      {items.map((menuItem) => {
-        const { id, title, img, desc, price } = menuItem;
+      {items.map((item) => {
+        const { id, title, img, desc, price } = item;
         return (
-          <article className="menu-item">
+          <article className="menu-item" key={id}>
             <img src={img} alt={title} className="photo" />
             <div className="item-info">
               <header>
