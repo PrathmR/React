@@ -45,3 +45,15 @@ Inside Menu.jsx, make sure your UI looks as following:
 		</div>
 	</article>
 </div>
+
+**Challenge3:Creating Categories
+This will be a quick lab. In this lab, let us go ahead and populate our Categories.jsx file. 
+This component will be responsible for displaying categories at the top 
+to toggle different items on the menu. To pass this challenge:
+
+Make sure your returned UI from Categories.jsx looks like this:
+<div className="btn-container">
+	<button className="filter-btn">All</button>
+	<button className="filter-btn">Breakfast</button>
+	<button className="filter-btn">Shakes</button>
+</div>
