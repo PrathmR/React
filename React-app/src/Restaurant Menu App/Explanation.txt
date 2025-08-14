@@ -57,3 +57,24 @@ Make sure your returned UI from Categories.jsx looks like this:
 	<button className="filter-btn">Breakfast</button>
 	<button className="filter-btn">Shakes</button>
 </div>
+
+
+**Challenge4: Creating filter function
+If you observed, in the last lab we modified the logic to 
+use a state variable to store the items from data.json file. 
+This is because we want to dynamically set the items visible on the screen depending
+ on the selected button.
+
+To pass this lab, make sure of the following things:
+
+There’s a function passed called filterItems to Categories.jsx component. 
+On every button call, make sure to call this function.
+In the file App.jsx, implement logic inside filterItems function to setMenuItems 
+depending on what category of a button is clicked. For example, if you click on Shakes button, 
+you should call filterItems(‘shakes’) and then inside filterItems, update the menuItems 
+to contain only the items with category as shakes, i.e. only “godzilla milkshake”,
+ “oreo dream” and “quarantine buddy”
+You should finally set it using setMenuItems and the UI would update automatically, 
+thanks to React.
+Note: You have to handle the case of clicking All button in a special way, 
+and make sure all items are displayed.
