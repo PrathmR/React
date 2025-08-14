@@ -1,0 +1,3 @@
+Introduction to project
+Welcome to a new React project! In this project, we will use React to create a 
+full single page application for a Restaurant menu with category based filters.
