@@ -3,7 +3,6 @@ import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
 import "./index.css";
-
 function App() {
   // make your changes here
   return (
@@ -14,7 +13,8 @@ function App() {
           <div className="underline"></div>
         </div>
         <Categories />
-        <Menu />
+        {/* pass "items" imported above here as items prop */}
+        <Menu items={items} />
       </section>
     </main>
   );
