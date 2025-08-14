@@ -4,7 +4,11 @@ import Categories from "./Categories";
 import items from "./data";
 import "./index.css";
 function App() {
-  // make your changes here
+  const [menuItems, setMenuItems] = useState(items);
+
+  // don't worry about it yet
+  const filterItems = () => {};
+
   return (
     <main>
       <section className="menu section">
@@ -12,9 +16,8 @@ function App() {
           <h2>our menu</h2>
           <div className="underline"></div>
         </div>
-        <Categories />
-        {/* pass "items" imported above here as items prop */}
-        <Menu items={items} />
+        <Categories filterItems={filterItems} />
+        <Menu items={menuItems} />
       </section>
     </main>
   );
