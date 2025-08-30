@@ -328,26 +328,26 @@
 //App component for birthday remainder
 //Css is commented in index.css file
 //uncomment it if you want to use the css from index.css file.
-// import React, { useState } from "react";
-// import data from "./BirthdayReminder/data";
-// import List from "./BirthdayReminder/List";
-// function App() {
+import React, { useState } from "react";
+import data from "./BirthdayReminder/data";
+import List from "./BirthdayReminder/List";
+function App() {
  
-//   const [people, setPeople] = useState(data);
+  const [people, setPeople] = useState(data);
 
-//   function clearAllRecords() {
-//     setPeople([]);
-//   }
-//   return (
-//     <main>
-//       <section className="container" >
+  function clearAllRecords() {
+    setPeople([]);
+  }
+  return (
+    <main>
+      <section className="container" >
       
-//         <h3>{people.length} birthdays today</h3>
-//         <List people={people} />
-//         <button onClick={clearAllRecords} className="active:scale-90">Clear All</button>
-//       </section>
-//     </main>
-//   );
-// }
+        <h3>{people.length} birthdays today</h3>
+        <List people={people} />
+        <button onClick={clearAllRecords} className="active:scale-90">Clear All</button>
+      </section>
+    </main>
+  );
+}
 
-//export default App;
+export default App;
